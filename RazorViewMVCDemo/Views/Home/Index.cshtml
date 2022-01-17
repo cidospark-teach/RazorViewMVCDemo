@@ -1,0 +1,19 @@
+﻿@model IEnumerable<UsersToDisplayViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<section style="border:1px solid grey; display: flex; flex-wrap:wrap; width: 980px; margin:0px auto; margin-top:40px">
+
+    @foreach(var user in Model)
+    {
+        <div class="my_card" style="text-align:center; border: 1px solid #ccc; width: 300px; margin-right:20px">
+            <h1 class="big_text">@user.FullName</h1>
+            <div class="">@user.ActiveStatus</div>
+            <div class="">@user.Email</div>
+            <div class="">@user.Address</div>
+        </div>
+    }
+
+</section>
