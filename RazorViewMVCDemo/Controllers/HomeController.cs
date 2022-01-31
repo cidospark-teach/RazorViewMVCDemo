@@ -28,31 +28,34 @@ namespace RazorViewMVCDemo.Controllers
 
         public IActionResult Index()
         {
+
             var users = _userMgr.Users.Include(x => x.Photos).ToList() ;
 
-            //var usersToDisplay = _mapper.Map<>();
-
-            // map to viewmodel
-            var usersToDisplay = new List<UsersToDisplayViewModel>();
-
-            foreach(var user in users)
-            {
-                usersToDisplay.Add(new UsersToDisplayViewModel
-                {
-                    FullName = $"{user.LastName} {user.FirstName}",
-                    ActiveStatus = user.IsActive? "Active" : "Not Active",
-                    Email = user.Email,
-                    Address = $"{user.Street}, {user.State}, {user.Country}",
-                    Photo = user.Photos.FirstOrDefault().ToString()
-                });
-            }
-
+            var usersToDisplay = _mapper.Map<List<UsersToDisplayViewModel>>(users);
             return View(usersToDisplay);
+
+            #region commented out
+            //ViewBag.TheTitle = "Home Page";
+            // map to viewmodel
+            //var usersToDisplay = new List<UsersToDisplayViewModel>();
+
+            //foreach(var user in users)
+            //{
+            //    usersToDisplay.Add(new UsersToDisplayViewModel
+            //    {
+            //        FullName = $"{user.LastName} {user.FirstName}",
+            //        ActiveStatus = user.IsActive? "Active" : "Not Active",
+            //        Email = user.Email,
+            //        Address = $"{user.Street}, {user.State}, {user.Country}",
+            //        Photo = user.Photos.FirstOrDefault().ToString()
+            //    });
+            //}
+            #endregion
+
         }
 
         public IActionResult Privacy()
         {
-            //ViewBag.HisTitle = "Home Page";
             return View();
         }
 

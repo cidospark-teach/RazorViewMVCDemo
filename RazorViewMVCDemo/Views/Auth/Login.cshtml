@@ -1,0 +1,30 @@
+﻿@model LoginViewModel
+@{
+}
+<style>
+    .input-wrapper{
+        width: 100%;
+        padding: 10px;
+    }
+</style>
+
+<section>
+    <div class="container-box">
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <br/>
+        <h2>Login here...</h2>
+        <form method="post" asp-action="Login" asp-controller="Auth">
+            <div class="input-wrapper">
+                <input asp-for="Email" class="" placeholder="Enter email" />
+                <span asp-validation-for="Email"></span>
+            </div>
+            <div class="input-wrapper">
+                <input asp-for="Password" class="" placeholder="Enter email" />
+                <span asp-validation-for="Password"></span>
+            </div>
+
+            <div class="input-wrapper"><button type="submit" class="btn btn-primary">Login</button> </div>
+        </form>
+    </div>
+</section>

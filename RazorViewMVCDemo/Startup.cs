@@ -35,7 +35,11 @@ namespace RazorViewMVCDemo
             if(_env.IsDevelopment())
                 services.AddDbContextPool<AppDbContext>(options => options.UseSqlite(Configuration.GetConnectionString("ConSqlite")));
 
-            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Con")));
+            // connection string for sql server
+            //services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Con")));
+
+            // connection string for sql sqlite
+            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConDocker")));
 
             services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             services.AddTransient<Seeder>();
