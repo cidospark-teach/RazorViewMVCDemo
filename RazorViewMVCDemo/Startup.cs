@@ -49,7 +49,7 @@ namespace RazorViewMVCDemo
                 //opt.Password.RequiredUniqueChars = 1;
                 //opt.Password.RequireNonAlphanumeric = false;
 
-                // opt.SignIn.RequireConfirmedAccount = true;
+                //opt.SignIn.RequireConfirmedEmail = true;
 
             }).AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
