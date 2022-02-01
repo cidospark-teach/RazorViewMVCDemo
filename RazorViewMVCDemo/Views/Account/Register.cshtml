@@ -1,0 +1,66 @@
+﻿@model RegisterViewModel
+@{
+}
+<style>
+    .input-wrapper {
+        width: 100%;
+        padding: 10px;
+    }
+    .summary-err ul li{
+        list-style:none;
+    }
+</style>
+
+<section>
+    <div class="container-box">
+        <div class="summary-err" asp-validation-summary="All"></div>
+
+        <br />
+        <h2>Register here...</h2>
+        <form method="post" asp-action="Register" asp-controller="Account">
+            <div class="input-wrapper">
+                <input asp-for="LastName" class="" placeholder="Enter last name" />
+                <span asp-validation-for="LastName"></span>
+            </div>
+            <div class="input-wrapper">
+                <input asp-for="FirstName" class="" placeholder="Enter first name" />
+                <span asp-validation-for="FirstName"></span>
+            </div>
+
+            <div class="input-wrapper">
+                <input asp-for="Email" class="" placeholder="Enter email" />
+                <span asp-validation-for="Email"></span>
+            </div>
+
+
+            <div class="input-wrapper">
+                <input asp-for="Street" class="" placeholder="Enter email" />
+                <span asp-validation-for="Street"></span>
+            </div>
+
+
+            <div class="input-wrapper">
+                <input asp-for="State" class="" placeholder="Enter email" />
+                <span asp-validation-for="State"></span>
+            </div>
+
+
+            <div class="input-wrapper">
+                <input asp-for="Country" class="" placeholder="Enter email" />
+                <span asp-validation-for="Country"></span>
+            </div>
+
+            <div class="input-wrapper">
+                <input asp-for="Password" class="" placeholder="Enter password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+
+            <div class="input-wrapper">
+                <input asp-for="ConfirmPassword" class="" placeholder="Enter confirm Password" />
+                <span asp-validation-for="ConfirmPassword"></span>
+            </div>
+
+            <div class="input-wrapper"><button type="submit" class="btn btn-primary">Login</button> </div>
+        </form>
+    </div>
+</section>

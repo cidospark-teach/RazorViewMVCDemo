@@ -14,6 +14,7 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Helpers\" />
     <Folder Include="Views\Auth\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
@@ -27,6 +28,7 @@
     <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
     <None Remove="Helpers\" />
     <None Remove="Views\Auth\" />
+    <None Remove="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.22" />

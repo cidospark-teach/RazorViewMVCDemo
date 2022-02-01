@@ -20,8 +20,12 @@
                 <span asp-validation-for="Email"></span>
             </div>
             <div class="input-wrapper">
-                <input asp-for="Password" class="" placeholder="Enter email" />
+                <input asp-for="Password" class="" placeholder="Enter password" />
                 <span asp-validation-for="Password"></span>
+            </div>
+
+            <div class="input-wrapper">
+                <input type="checkbox" asp-for="RememberMe" /> Remember Me
             </div>
 
             <div class="input-wrapper"><button type="submit" class="btn btn-primary">Login</button> </div>

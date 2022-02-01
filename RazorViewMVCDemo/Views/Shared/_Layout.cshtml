@@ -24,6 +24,16 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Register</a>
+                        </li>
+                        @if (ViewBag.IsLoggedOut == "false")
+                        {
+                            <li style="position:absolute; right:30px; top:10px;">
+                                <form method="post" asp-action="Logout" asp-controller="Auth"><button type="submit">Logout</button></form>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

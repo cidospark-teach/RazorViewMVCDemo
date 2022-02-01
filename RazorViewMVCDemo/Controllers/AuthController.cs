@@ -54,9 +54,29 @@ namespace RazorViewMVCDemo.Controllers
             }
 
             // Todo: If check for email confirmation, Phone number confirmation is require; then go ahead from here below
-            
 
+
+            ViewBag.IsLoggedOut = "false";
             return RedirectToAction("Index", "Home");
+        }
+
+
+        [HttpGet]
+        public  IActionResult ConfirmEmail(string email, string token)
+        {
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(token))
+            {
+                ViewBag.ErrMsg = "Invalid email or token";
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInMgr.SignOutAsync();
+            ViewBag.IsLoggedOut = "true";
+            return RedirectToAction("Login");
         }
 
     }

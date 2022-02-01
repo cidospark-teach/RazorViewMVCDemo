@@ -23,6 +23,8 @@ namespace RazorViewMVCDemo.Helpers
                 .ForMember(dest => dest.Photo, opt => {
                     opt.MapFrom(p => p.Photos.FirstOrDefault(x => x.IsMain == true));
                 });
+
+            CreateMap<RegisterViewModel, User>();
         }
     }
 }

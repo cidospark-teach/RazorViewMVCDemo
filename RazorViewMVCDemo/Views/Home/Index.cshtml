@@ -3,11 +3,25 @@
     ViewData["Title"] = "Home Page";
 }
 
+<style>
+    .min-nav-panel{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .min-nav-panel div a{
+        text-decoration:none;
+    }
+</style>
 
 @*<h1>@ViewBag.HisTitle</h1>*@
 
-<div>
-    <a asp-action="Login" asp-controller="Auth" style="background-color:skyblue; color:navy; width:100px; border-radius:6px">Login</a>
+<div class="min-nav-panel">
+    <div>
+        <a asp-action="Login" asp-controller="Auth" style="background-color:skyblue; color:navy; width:100px; border-radius:6px">Login</a>
+    </div>
+
+    
 </div>
 <br/>
 <section style="border:1px solid grey; display: flex; flex-wrap:wrap; width: 980px; margin:0px auto; margin-top:40px">

@@ -41,7 +41,19 @@ namespace RazorViewMVCDemo
             // connection string for sql sqlite
             services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConDocker")));
 
-            services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddIdentity<User, IdentityRole>(opt =>
+            {
+                //opt.Password.RequireUppercase = false;
+                //opt.Password.RequireUppercase = false;
+                //opt.Password.RequiredLength = 1;
+                //opt.Password.RequiredUniqueChars = 1;
+                //opt.Password.RequireNonAlphanumeric = false;
+
+                // opt.SignIn.RequireConfirmedAccount = true;
+
+            }).AddEntityFrameworkStores<AppDbContext>()
+            .AddDefaultTokenProviders();
+
             services.AddTransient<Seeder>();
             services.AddAutoMapper();
         }
