@@ -46,14 +46,14 @@ namespace RazorViewMVCDemo.Controllers
                 ModelState.AddModelError("Invalid", "Invalid Credentials");
             }
 
+            // Todo: If check for email confirmation, Phone number confirmation is require; then go ahead from here below
+
             var res = await _signInMgr.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
             if (!res.Succeeded)
             {
                 ModelState.AddModelError("", "invalid credentials");
                 return View(model);
             }
-
-            // Todo: If check for email confirmation, Phone number confirmation is require; then go ahead from here below
 
 
             ViewBag.IsLoggedOut = "false";
