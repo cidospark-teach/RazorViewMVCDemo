@@ -43,13 +43,13 @@ namespace RazorViewMVCDemo
 
             services.AddIdentity<User, IdentityRole>(opt =>
             {
-                //opt.Password.RequireUppercase = false;
-                //opt.Password.RequireUppercase = false;
-                //opt.Password.RequiredLength = 1;
-                //opt.Password.RequiredUniqueChars = 1;
-                //opt.Password.RequireNonAlphanumeric = false;
+                opt.Password.RequireUppercase = false;
+                opt.Password.RequireUppercase = false;
+                opt.Password.RequiredLength = 1;
+                opt.Password.RequiredUniqueChars = 1;
+                opt.Password.RequireNonAlphanumeric = false;
 
-                //opt.SignIn.RequireConfirmedEmail = true;
+                opt.SignIn.RequireConfirmedEmail = true;
 
             }).AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
