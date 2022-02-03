@@ -54,8 +54,7 @@ namespace RazorViewMVCDemo.Controllers
                 ModelState.AddModelError("", "invalid credentials");
                 return View(model);
             }
-
-
+            
             ViewBag.IsLoggedOut = "false";
             return RedirectToAction("Index", "Home");
         }
