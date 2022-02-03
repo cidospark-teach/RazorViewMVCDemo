@@ -48,6 +48,13 @@ namespace RazorViewMVCDemo.Controllers
 
             // Todo: If check for email confirmation, Phone number confirmation is require; then go ahead from here below
 
+            
+            if (!await _userMgr.IsEmailConfirmedAsync(user)){
+                ModelState.AddModelError("Denied", "Email not confirmed!");
+                return View(model);
+            }
+
+
             var res = await _signInMgr.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
             if (!res.Succeeded)
             {
